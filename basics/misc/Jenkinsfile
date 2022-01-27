@@ -14,8 +14,12 @@ node {
      }
    }
    stage('docker build/push') {
+     sh 'pwd'
+     dir("basics") {
      docker.withRegistry('https://index.docker.io/v1/', 'docker_hub_cred') {
        def app = docker.build("amuyal/docker-nodejs-demo:${commit_id}", '.').push()
+	}
+      sh 'pwd'
      }
    }
    stage('docker run') {

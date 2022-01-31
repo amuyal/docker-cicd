@@ -1,5 +1,7 @@
 node('docker') {
 
+#text
+
     stage 'Checkout'
         checkout scm
     stage 'Build & UnitTest'

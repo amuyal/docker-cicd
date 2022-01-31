@@ -1,6 +1,5 @@
 node('docker') {
 
-#text
 
     stage 'Checkout'
         checkout scm
